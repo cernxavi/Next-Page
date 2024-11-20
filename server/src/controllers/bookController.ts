@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { Book } from '../models/book.js';
 
+const ApiKey = process.env.API_KEY;
+
 // Get all books
 export const getAllBooks = async (_req: Request, res: Response) => {
     try {
@@ -11,17 +13,6 @@ export const getAllBooks = async (_req: Request, res: Response) => {
     }
 };
 
-// Get book by id
-export const getBookById = async (req: Request, res: Response) => {
-    try {
-        const book = await Book.findByPk(req.params.id);
-        if (!book) {
-            return res.status(404).json({ error: 'book not found' });
-        } else { res.status(200).json(book); }
-    } catch (error) {
-        res.status(500).json({ error: 'error getting book by Id' });
-    }
-};
 
 // create book
 export const createBook = async (req: Request, res: Response) => {
@@ -33,22 +24,6 @@ export const createBook = async (req: Request, res: Response) => {
     }
 };
 
-// update book by id
-export const updateBook = async (req: Request, res: Response) => {
-    try {
-        const updatedBook = await Book.findByPK(req.params.id);
-        if (!updatedBook) {
-            return res.status(404).json({ error: 'book not found' });
-        } else {
-            updatedBook.title = req.body.title;
-            updatedBook.author = req.body.author;
-            updatedBook.save();
-            res.status(200).json(updatedBook);
-        }
-    } catch (error) {
-        res.status(500).json({ error: 'error updating book' });
-    }
-}
 
 // delete book by id
 export const deleteBook = async (req: Request, res: Response) => {
@@ -64,3 +39,6 @@ export const deleteBook = async (req: Request, res: Response) => {
         res.status(500).json({ error: 'error deleting book' });
     }
 };
+
+// search books with api  send data to front end to be rendered
+export const searchBooks = async (req: Request, res: Response) => {};
