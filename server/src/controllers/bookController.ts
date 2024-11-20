@@ -36,7 +36,7 @@ export const createBook = async (req: Request, res: Response) => {
 // update book by id
 export const updateBook = async (req: Request, res: Response) => {
     try {
-        const updatedBook = await Book.findByPK(req.params.id);
+        const updatedBook = await Book.findByPk(req.params.id);
         if (!updatedBook) {
             return res.status(404).json({ error: 'book not found' });
         } else {
