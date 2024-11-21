@@ -64,5 +64,37 @@ export const searchBooks = async (req: Request, res: Response) => {
 };
 
 // get the book form api by genre
+export const getBooksByGenre = async (req: Request, res: Response) => {
+    try {
+        const genre = req.query.body;
+        const response = await fetch(`https://api.bigbookapi.com/books-by-genre?api-key=9f61e1484e8d4782b1cccc5ba3775cd7&genre=${genre}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+            },
+        });
+        const data = await response.json();
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'error getting books by genre' });
+    }
+}
 
 // get the book form api by author
+export const getBooksByAuthor = async (req: Request, res: Response) => {
+    try {
+        const author = req.query.body;
+        const response = await fetch(`https://api.bigbookapi.com/books-by-author?api-key=9f61e1484e8d4782b1cccc5ba3775cd7&author=${author}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+            },
+        });
+        const data = await response.json();
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'error getting books by author' });
+    }
+}
