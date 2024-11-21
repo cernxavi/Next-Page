@@ -8,6 +8,11 @@ dotenv.config();
 const apiKey = "9f61e1484e8d4782b1cccc5ba3775cd7";
 // const apiUrl = process.env.BOOK_API_BASE_URL;
 
+// function to encode the query
+const encodeQuery = (query: string): string => {
+    return encodeURIComponent(query.trim().replace(/\s/g, '+'));
+};
+
 // Get all books
 export const getAllBooks = async (_req: Request, res: Response) => {
     try {
@@ -45,10 +50,11 @@ export const deleteBook = async (req: Request, res: Response) => {
     }
 };
 
+
 // search books with api  send data to front end to be rendered
 export const searchBooks = async (req: Request, res: Response) => {
     try {
-        const query = req.query.body;
+        const query = encodeQuery(req.body as string);
         const response = await fetch(`https://api.bigbookapi.com/search-books?api-key=9f61e1484e8d4782b1cccc5ba3775cd7&query=${query}`, {
             method: 'GET',
             headers: {
@@ -63,11 +69,11 @@ export const searchBooks = async (req: Request, res: Response) => {
     }
 };
 
-// get the book form api by genre
-export const getBooksByGenre = async (req: Request, res: Response) => {
+//function to get all information about a specific book
+export const searchBookById = async (req: Request, res: Response) => {
     try {
-        const genre = req.query.body;
-        const response = await fetch(`https://api.bigbookapi.com/books-by-genre?api-key=9f61e1484e8d4782b1cccc5ba3775cd7&genre=${genre}`, {
+        const id = req.body.id;
+        const response = await fetch(`https://api.bigbookapi.com/${id}?api-key=9f61e1484e8d4782b1cccc5ba3775cd7`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -77,15 +83,14 @@ export const getBooksByGenre = async (req: Request, res: Response) => {
         const data = await response.json();
         res.status(200).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'error getting books by genre' });
+        res.status(500).json({ error: 'error getting book by id' });
     }
 }
 
-// get the book form api by author
-export const getBooksByAuthor = async (req: Request, res: Response) => {
+export const getSimilarBooks = async (req: Request, res: Response) => {
     try {
-        const author = req.query.body;
-        const response = await fetch(`https://api.bigbookapi.com/books-by-author?api-key=9f61e1484e8d4782b1cccc5ba3775cd7&author=${author}`, {
+        const id = req.body.id;
+        const response = await fetch(`https://api.bigbookapi.com/${id}/similar?api-key=9f61e1484e8d4782b1cccc5ba3775cd7`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -95,6 +100,24 @@ export const getBooksByAuthor = async (req: Request, res: Response) => {
         const data = await response.json();
         res.status(200).json(data);
     } catch (error) {
-        res.status(500).json({ error: 'error getting books by author' });
+        res.status(500).json({ error: 'error getting similar books' });
+    }
+}
+
+//get the book form api by author
+export const searchBookByAuthor = async (req: Request, res: Response) => {
+    try {
+        const author = encodeQuery(req.body as string);
+        const response = await fetch(`https://api.bigbookapi.com/search-authors?name=${author}&api-key=9f61e1484e8d4782b1cccc5ba3775cd7`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': apiKey
+            },
+        });
+        const data = await response.json();
+        res.status(200).json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'error getting book by author' });
     }
 }
