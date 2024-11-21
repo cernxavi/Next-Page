@@ -6,8 +6,8 @@ interface BookAttributes {
   author: string;
   isbn: string;
   pages: number;
-  edition: number;
-  is_paperback: boolean;
+  rating: number;
+  genre: string;
 }
 
 interface BookCreationAttributes extends Optional<BookAttributes, 'book_id'> {}
@@ -18,8 +18,8 @@ export class Book extends Model<BookAttributes, BookCreationAttributes> implemen
   public author!: string;
   public isbn!: string;
   public pages!: number;
-  public edition!: number;
-  public is_paperback!: boolean;
+  public rating!: number;
+  public genre!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -45,11 +45,11 @@ export function BookFactory(sequelize: Sequelize): typeof Book {
       pages: {
         type: DataTypes.INTEGER,
       },
-      edition: {
+      rating: {
         type: DataTypes.INTEGER,
       },
-      is_paperback: {
-        type: DataTypes.BOOLEAN,
+      genre: {
+        type: DataTypes.STRING,
       },
     },
     {
