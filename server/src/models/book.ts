@@ -53,6 +53,7 @@ export function BookFactory(sequelize: Sequelize): typeof Book {
       },
     },
     {
+      tableName: 'books',
       sequelize,
       timestamps: false,
       underscored: true,
