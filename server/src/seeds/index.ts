@@ -1,5 +1,5 @@
 import { seedBook } from './book-seeds.js';
-import { sequelize } from '../models';
+import { sequelize } from '../models/index.js';
 
 
 const seedAll = async (): Promise<void> => {
