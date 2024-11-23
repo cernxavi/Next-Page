@@ -1,8 +1,7 @@
 interface Book {
     title: string;
+    description: string;
     author: string;
-    isbn: string;
-    pages: number;
-    rating: number;
-    genre: string;
 }
+
+export default Book;
