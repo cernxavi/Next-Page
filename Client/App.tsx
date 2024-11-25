@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Components/Header';
 import Recommended from './Components/Recommended';
 import Footer from './Components/Footer';
+import BookList from './Components/BookList';
 
 const App: React.FC = () => {
   return (
