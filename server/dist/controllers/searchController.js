@@ -9,7 +9,7 @@ const apiKey = process.env.OPENAI_API_KEY;
 let model;
 //initialize the model if the key is provided
 if (apiKey) {
-    model = new ChatOpenAI({ openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo', temperature: 0.5 });
+    model = new ChatOpenAI({ openAIApiKey: apiKey, modelName: 'gpt-3.5-turbo', temperature: 1.5 });
 }
 else {
     console.error('API key not provided');
@@ -23,17 +23,20 @@ const parser = StructuredOutputParser.fromNamesAndDescriptions({
 const formatInstructions = parser.getFormatInstructions();
 //new prompt template 
 const promptTemplate = new PromptTemplate({
-    template: `You are a librarian who loves to recommend books to readers. Respond with a JSON object that includes exactly the following keys:
+    template: `Recommend a book related to the following topic: "{{text}}". Respond with a JSON object that includes exactly the following keys:
     - "title": Title of the book (a string)
     - "description": Description of the book (a string)
     - "author": Author of the book (a string)
-    Make sure there are no extra fields. Example:`,
+    Make sure there are no extra fields.`,
     inputVariables: ['text'],
     partialVariables: { format_instructions: formatInstructions },
 });
 //format the prompt using the prompt template with the user input
 const formatPrompt = async (text) => {
-    return promptTemplate.format({ text });
+    // return promptTemplate.format({ text });
+    const prompt = await promptTemplate.format({ text });
+    console.log(prompt);
+    return prompt;
 };
 //call the openAI API to get a response to the formatted prompt
 const promptFunc = async (input) => {
@@ -90,6 +93,7 @@ const parseResponse = async (response) => {
 export const recommend = async (req, res) => {
     try {
         const userText = req.body.text;
+        console.log(userText);
         if (!userText) {
             res.status(500).json({ text: null, response: 'please provide text' });
             return;
