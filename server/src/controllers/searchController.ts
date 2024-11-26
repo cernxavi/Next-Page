@@ -26,23 +26,23 @@ const parser = StructuredOutputParser.fromNamesAndDescriptions({
     author: 'Author of the book',
 });
 
-const formatInstructions = parser.getFormatInstructions();
+// const formatInstructions = parser.getFormatInstructions();
 
 //new prompt template 
 const promptTemplate = new PromptTemplate({
-    template: `Recommend a book related to the following topic: "{{text}}". Respond with a JSON object that includes exactly the following keys:
+    template: `Recommend a book related to the following topic: {text}. Respond with a JSON object that includes exactly the following keys:
     - "title": Title of the book (a string)
     - "description": Description of the book (a string)
     - "author": Author of the book (a string)
     Make sure there are no extra fields.`,
     inputVariables: ['text'],
-    partialVariables: { format_instructions: formatInstructions },
+    // partialVariables: { format_instructions: formatInstructions },
 });
 
 //format the prompt using the prompt template with the user input
-const formatPrompt = async (text: string): Promise<string> => {
+const formatPrompt = async (input: string): Promise<string> => {
     // return promptTemplate.format({ text });
-    const prompt = await promptTemplate.format({ text});
+    const prompt = await promptTemplate.format({ text: input });
     console.log(prompt);
     return prompt;
 };
