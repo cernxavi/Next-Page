@@ -82,7 +82,7 @@ export const searchBooks = async (req: Request, res: Response) => {
 //function to get all information about a specific book
 export const searchBookById = async (req: Request, res: Response) => {
     try {
-        const id = req.body.id;
+        const id = req.params.id;
         const apiKey = '9f61e1484e8d4782b1cccc5ba3775cd7';
 
         const response = await axios.get(`https://api.bigbookapi.com/${id}`, {
@@ -106,7 +106,7 @@ export const searchBookById = async (req: Request, res: Response) => {
 // get a similar book based on the id
 export const getSimilarBooks = async (req: Request, res: Response) => {
     try {
-        const id = req.body.id;
+        const id = req.params.id;
         const apiKey = '9f61e1484e8d4782b1cccc5ba3775cd7';
 
         const response = await axios.get(`https://api.bigbookapi.com/${id}/similar`, {
