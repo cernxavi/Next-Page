@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { retrieveBooks } from '../api/bookAPI';
 
 interface Book {
 id: number;
@@ -10,19 +11,24 @@ const myBooks = () => {
     const [books, setBooks] = useState<Book[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-
-    useEffect(() => {
-        fetch('/api/books')
-            .then((res) => res.json())
-            .then((data) => {
-                setBooks(data);
-                setLoading(false);
-            })
-            .catch((err) => {
-                console.error(err);
-                setError(true);
-            });
-    }, []);
+    const [ dataCheck, setDataCheck ] = useState(true);
+    
+    const fetchWork = async () => {
+        try {
+          const data = await retrieveBooks();
+          setBooks(data);
+        } catch (err) {
+          console.error('Failed to retrieve work:', err);
+        }
+      };
+    
+      useEffect(() => {
+        if(dataCheck) {
+          fetchWork();
+        } else {
+          setDataCheck(false);
+        }
+      }, [dataCheck]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error</p>;
