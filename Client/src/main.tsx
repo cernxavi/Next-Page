@@ -4,7 +4,8 @@ import './index.css'
 
 import App from './App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
-import MainPage from './pages/MainPage.tsx';
+// import MainPage from './pages/MainPage.tsx';
+import SearchBooks from './pages/search.tsx';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <MainPage />
+        element: <SearchBooks />
       }, 
       
     ]

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function BrowseBooks() {
     const [books, setBooks] = useState<{ id: number; title: string; author: string }[]>([]);
