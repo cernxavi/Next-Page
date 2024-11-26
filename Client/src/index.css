@@ -148,18 +148,6 @@ tbody tr:nth-child(odd) {
   box-shadow: 10px 5px 5px black;
 }
 
-.volunteer {
-  width: 100%;
-}
-
-.new-volunteer {
-  display: flex;
-  justify-content: center;
-}
-
-.new-volunteer > a {
-  color: #B95F89;
-}
 
 .volunteer-list {
   display: flex;
