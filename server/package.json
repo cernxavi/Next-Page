@@ -10,6 +10,13 @@
     "dev": "npx nodemon",
     "seed": "node dist/seeds/index.js"
   },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,json,js",
+    "exec": "npx tsc && node dist/server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
