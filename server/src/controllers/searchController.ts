@@ -2,7 +2,7 @@ import { type Request, type Response } from 'express';
 // import { OpenAI } from '@langchain/openai';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { StructuredOutputParser } from 'langchain/output_parsers';
-import Book from '../types/book';
+import Book from '../types/book.js';
 import dotenv from 'dotenv';
 import { ChatOpenAI } from '@langchain/openai';
 
