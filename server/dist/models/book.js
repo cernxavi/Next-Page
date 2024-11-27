@@ -3,7 +3,7 @@ export class Book extends Model {
 }
 export function BookFactory(sequelize) {
     Book.init({
-        book_id: {
+        id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
@@ -11,19 +11,10 @@ export function BookFactory(sequelize) {
         title: {
             type: DataTypes.STRING,
         },
-        author: {
+        image: {
             type: DataTypes.STRING,
         },
-        isbn: {
-            type: DataTypes.STRING,
-        },
-        pages: {
-            type: DataTypes.INTEGER,
-        },
-        rating: {
-            type: DataTypes.INTEGER,
-        },
-        genre: {
+        description: {
             type: DataTypes.STRING,
         },
     }, {

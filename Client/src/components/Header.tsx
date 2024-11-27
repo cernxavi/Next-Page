@@ -1,15 +1,12 @@
 import React from 'react';
 
+import Navigation from './Nav';
+
 const Header: React.FC = () => {
   return (
     <header style={styles.header}>
       <h1 style={styles.title}>Welcome to Next Page</h1>
-      <nav style={styles.nav}>
-        <a href="#home" style={styles.link}>Home</a>
-        <a href="#my books" style={styles.link}>My Books</a>
-        <a href="#login/signIn" style={styles.link}>Login/Sign In</a>
-        <a href="#serch" style={styles.link}>Serch</a>
-      </nav>
+      <Navigation />
     </header>
   );
 };

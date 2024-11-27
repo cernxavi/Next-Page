@@ -1,18 +1,32 @@
 // BookCard.tsx
 import React from 'react';
+// import { getBooks } from '../api/bookAPI';
+import { getBook } from '../api/bookAPI';
+import { saveBook } from '../api/bookAPI';
 
 type BookCardProps = {
+  id: number;
   title: string;
-  coverUrl: string;
-  author?: string; // Optional
+  subtitle: string;
+  image: string;
 };
 
-const BookCard: React.FC<BookCardProps> = ({ title, coverUrl, author }) => {
+const BookCard: React.FC<BookCardProps> = ({ id, title, image, subtitle }) => {
+  const handleSave = async () => {
+    try {
+      const book = await getBook(id);
+      await saveBook(book);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
-    <div className="book-card">
-      <img src={coverUrl} alt={`Cover of ${title}`} className="book-cover" />
-      <h3 className="book-title">{title}</h3>
-      {author && <p className="book-author">By {author}</p>}
+    <div>
+      <h2>{title}</h2>
+      <img src={image} alt={title} />
+      <p>{subtitle}</p>
+      <button onClick={handleSave}>Save Book</button>
     </div>
   );
 };
