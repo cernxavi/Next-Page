@@ -6,6 +6,7 @@ import App from './App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 // import MainPage from './pages/MainPage.tsx';
 import SearchBooks from './pages/search.tsx';
+import RecommendBook from './pages/recommend.tsx';
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,11 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <SearchBooks />
-      }, 
-      
+      },
+      {
+        path: '/recommend',
+        element: <RecommendBook />
+      }
     ]
   }
 ]);

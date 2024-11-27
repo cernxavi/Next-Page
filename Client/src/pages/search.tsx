@@ -3,7 +3,7 @@ import { getBooks } from '../api/bookAPI';
 import BookCard from '../components/bookCard';
 
 
-function SearchBooks() {      
+function SearchBooks() {
     const [query, setQuery] = useState('');
     const [books, setBooks] = useState<{ id: number; title: string; subtitle: string; image: string; }[]>([]);
     const [loading, setLoading] = useState(false);
@@ -32,10 +32,10 @@ function SearchBooks() {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)} />
-                <button onClick={handleSearch}>Search</button>
-                {loading && <p>Loading...</p>}
-                {error && <p>Error</p>}
-                <div>
+            <button onClick={handleSearch}>Search</button>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error</p>}
+            <div>
                 {books.map((book) => (
                     <BookCard
                         key={book.id}
