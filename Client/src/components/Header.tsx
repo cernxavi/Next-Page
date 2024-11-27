@@ -5,7 +5,7 @@ import Navigation from './Nav';
 const Header: React.FC = () => {
   return (
     <header style={styles.header}>
-      <h1 style={styles.title}>Welcome to Next Page</h1>
+      <h1 style={styles.title}>Discover your next favorite book</h1>
       <Navigation />
     </header>
   );
