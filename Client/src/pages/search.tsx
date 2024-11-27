@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { getBooks } from '../api/bookAPI';
+import BookCard from '../components/bookCard';
 
-function SearchBooks() {      
+
+function SearchBooks() {
     const [query, setQuery] = useState('');
-    const [books, setBooks] = useState<{ id: number; title: string; author: string }[]>([]);
+    const [books, setBooks] = useState<{ id: number; title: string; subtitle: string; image: string; }[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
@@ -10,9 +13,11 @@ function SearchBooks() {
         setLoading(true);
         setError(false);
         try {
-            const res = await fetch(`/api/books/search?query=${query}`);
-            const data = await res.json();
-            setBooks(data);
+            const res = await getBooks({ query });
+            console.log(res);
+            // const data = await res.json();
+            const flattened = res.books.flat();
+            setBooks(flattened);
         } catch (err) {
             console.error(err);
             setError(true);
@@ -22,21 +27,25 @@ function SearchBooks() {
 
     return (
         <div>
-            <h1>Search Books</h1>
+            <h1>Search a Book</h1>
             <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)} />
-                <button onClick={handleSearch}>Search</button>
-                {loading && <p>Loading...</p>}
-                {error && <p>Error</p>}
-                <ul>
-                    {books.map((book) => (
-                        <li key={book.id}>
-                            {book.title} by {book.author}
-                        </li>
-                    ))}
-                </ul>
+            <button onClick={handleSearch}>Search</button>
+            {loading && <p>Loading...</p>}
+            {error && <p>Error</p>}
+            <div>
+                {books.map((book) => (
+                    <BookCard
+                        key={book.id}
+                        id={book.id}
+                        title={book.title}
+                        subtitle={book.subtitle || ''}
+                        image={book.image}
+                    />
+                ))}
+            </div>
         </div>
     );
 }

@@ -37,9 +37,26 @@ const router = createBrowserRouter([
         path: '/search',
         element: <Search />
       },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/myBooks',
+        element: <MyBooks />
+      },
+      {
+        path: '/recommend',
+        element: <Recommend />
+      },
+      {
+        path: '/search',
+        element: <Search />
+      },
     ]
   }
 ]);
+
 
 const rootElement = document.getElementById('root');
 if(rootElement) {
