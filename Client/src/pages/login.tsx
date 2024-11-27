@@ -1,49 +1,52 @@
 import React, { useState } from 'react';
-
+import auth from '../utils/auth';
+import { login } from '../api/authAPI';
 function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
+    const [loginData, setLoginData] = useState({
+        username: '',
+        password: ''
+      });
 
-    const handleLogin = async () =>
+    const handleLogin = async (e: any) =>
     {
-        setLoading(true);
-        try {
-            const res = await fetch('/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, password }),
-            });
-            if (res.ok) {
-                window.location.href = '/myBooks';
-            } else {
-                setError('Invalid username or password');
-            }
+        e.preventDefault();
+         try {
+            const data = await login(loginData);
+            auth.login(data.token);
         } catch (err) {
             console.error(err);
             setError('An error occurred');
         }
-        setLoading(false);
     };
+    const handleChange = (e: any) => {
+        const { name, value } = e.target;
+        setLoginData({
+          ...loginData,
+          [name]: value
+        });
+      };
+
     return (
         <div>
             <h1>Login</h1>
-            <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+            <form  onSubmit={handleLogin}>
                 <div>
                     <label>Username</label>
                     <input
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)} required
+                        name="username"
+                        value={loginData.username}
+                        onChange={handleChange}
                     />
                 </div>
                 <div>
                     <label>Password</label>
                     <input
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)} required
+                        name="password"
+                        value={loginData.password}
+                        onChange={handleChange}
                     />
                 </div>
                 {error && <p style={{ color: 'red' }}>{error}</p>}

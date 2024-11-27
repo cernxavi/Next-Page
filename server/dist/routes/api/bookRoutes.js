@@ -1,5 +1,6 @@
 import express from 'express';
 import { getAllBooks, createBook, deleteBook, searchBooks, searchBookById, getSimilarBooks, searchBookByAuthor } from '../../controllers/bookController.js';
+import { recommend } from '../../controllers/searchController.js';
 const router = express.Router();
 //search a book
 router.get('/search', searchBooks);
@@ -15,4 +16,6 @@ router.post('/', createBook);
 router.delete('/:id', deleteBook);
 //get all books from database
 router.get('/', getAllBooks);
+//recommend books using openAI api
+router.post('/recommend', recommend);
 export { router as bookRouter };
