@@ -1,10 +1,15 @@
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+//import './index.css'
 
-import App from './App.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
-import MainPage from './pages/MainPage.tsx';
+import App from './App';
+import ErrorPage from './pages/ErrorPage';
+import MainPage from './pages/MainPage';
+import Login from './pages/login';
+import MyBooks from './pages/myBooks';
+import Recommend from './pages/recommend';
+import Search from './pages/search';
 
 const router = createBrowserRouter([
   {
@@ -16,7 +21,22 @@ const router = createBrowserRouter([
         index: true,
         element: <MainPage />
       }, 
-      
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/myBooks',
+        element: <MyBooks />
+      },
+      {
+        path: '/recommend',
+        element: <Recommend />
+      },
+      {
+        path: '/search',
+        element: <Search />
+      },
     ]
   }
 ]);
