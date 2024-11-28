@@ -7,7 +7,7 @@ import App from './App';
 import ErrorPage from './pages/ErrorPage';
 import MainPage from './pages/MainPage';
 // import Login from './pages/login';
-// import MyBooks from './pages/myBooks';
+import MyBooks from './pages/myBooks';
 import Recommend from './pages/recommend';
 import Search from './pages/search';
 
@@ -25,10 +25,10 @@ const router = createBrowserRouter([
       //   path: '/login',
       //   element: <Login />
       // },
-      // {
-      //   path: '/myBooks',
-      //   element: <MyBooks />
-      // },
+      {
+        path: '/myBooks',
+        element: <MyBooks />
+      },
       {
         path: '/recommend',
         element: <Recommend />
