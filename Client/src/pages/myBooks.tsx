@@ -14,8 +14,6 @@ const MyBooks = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    console.log(getAllBooks)
-
     const fetchBooks = async () => {
         setLoading(true);
         setError(false);

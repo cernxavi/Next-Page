@@ -14,7 +14,9 @@ const BookList: React.FC<BookListProps> = ({ id, title, image, subtitle }) => {
     // function to handle deleting book from database
     const handleDelete = async () => {
         try {
+            console.log(id);
             await deleteBook(id);
+            window.location.reload();
         } catch (error) {
             console.error(error);
         }
