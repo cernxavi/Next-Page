@@ -14,7 +14,7 @@ export function BookFactory(sequelize) {
         image: {
             type: DataTypes.STRING,
         },
-        description: {
+        subtitle: {
             type: DataTypes.STRING,
         },
     }, {

@@ -4,7 +4,7 @@ interface BookAttributes {
   id: number;
   title: string;
   image: string;
-  description: string;
+  subtitle: string; 
 }
 
 interface BookCreationAttributes extends Optional<BookAttributes, 'id'> { }
@@ -13,7 +13,7 @@ export class Book extends Model<BookAttributes, BookCreationAttributes> implemen
   public id!: number;
   public title!: string;
   public image!: string;
-  public description!: string;
+  public subtitle!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -33,7 +33,7 @@ export function BookFactory(sequelize: Sequelize): typeof Book {
       image: {
         type: DataTypes.STRING,
       },
-      description: {
+      subtitle: {
         type: DataTypes.STRING,
       },
     },
