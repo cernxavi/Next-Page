@@ -4,7 +4,7 @@ import Recommended from '../components/Recommended';
 
 export default function RecommendBook() {
     const [text, setText] = useState('');
-    const [recommendedBook, setRecommendedBook] = useState<{ title: string; author: string; description: string; } | null>(null);
+    const [recommendedBook, setRecommendedBook] = useState<{ title: string; author: string; description: string; image: string; } | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
