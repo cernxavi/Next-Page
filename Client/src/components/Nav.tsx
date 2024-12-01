@@ -1,27 +1,43 @@
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import '../styles/Header.css';
+=======
 
 // import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+>>>>>>> main
 
 function Navigation() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="navigation-bar">
       <Container fluid>
-        <Navbar.Brand as={Link} to="/">Next Page</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" className="nav-brand">
+          Next Page
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
+            className="nav-links"
             navbarScroll
           >
-            <Nav.Link as={Link} to="/myBooks">MyBooks</Nav.Link>
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/recommend">Recommend</Nav.Link>
+            <Nav.Link as={Link} to="/myBooks" className="nav-link">
+              MyBooks
+            </Nav.Link>
+            <Nav.Link as={Link} to="/login" className="nav-link">
+              Login
+            </Nav.Link>
+            <Nav.Link as={Link} to="/recommend" className="nav-link">
+              Recommended
+            </Nav.Link>
           </Nav>
+<<<<<<< HEAD
+=======
           {/* <Form className="d-flex">
             <Form.Control
               type="search"
@@ -31,6 +47,7 @@ function Navigation() {
             />
             <Button variant="outline-success">Search</Button>
           </Form> */}
+>>>>>>> main
         </Navbar.Collapse>
       </Container>
     </Navbar>

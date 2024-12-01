@@ -5,8 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App';
 import ErrorPage from './pages/ErrorPage';
+<<<<<<< HEAD
+//import MainPage from './pages/MainPage';
+import Login from './pages/login';
+=======
 // import MainPage from './pages/MainPage';
 // import Login from './pages/login';
+>>>>>>> main
 import MyBooks from './pages/myBooks';
 import Recommend from './pages/recommend';
 import Search from './pages/search';
@@ -21,10 +26,17 @@ const router = createBrowserRouter([
         index: true,
         element: <Search />
       }, 
+<<<<<<< HEAD
+      {
+        path: '/login',
+        element: <Login />
+      },
+=======
       // {
       //   path: '/login',
       //   element: <Login />
       // },
+>>>>>>> main
       {
         path: '/myBooks',
         element: <MyBooks />

@@ -1,0 +1,51 @@
+/* Header Styling */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    justify-content: center;
+    padding: 20px;
+    background-color: #f1f2eb; /* Alabaster from your palette */
+    color: #4a4a48; /* Davy's Gray */
+  }
+  
+  .header-title {
+    font-size: 2rem;
+    margin: 10px 0;
+    text-align: center; /* Ensures the title remains centered */
+    width: 100%; /* Title spans full width for alignment */
+  }
+  
+  /* Navigation Styling */
+  .navigation-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-brand {
+    font-size: 1.5rem;
+    color: #566246; /* Ebony */
+    font-weight: normal;
+    text-decoration: none;
+    font-style: italic;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px; /* Spacing between nav items */
+    margin-left: 20px;
+ }
+  
+  .nav-link {
+    font-size: 1rem;
+    color: #4a4a48;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  
+  .nav-link:hover {
+    color: #007b5e; /* Highlight on hover */
+  }
+  
