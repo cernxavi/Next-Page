@@ -1,25 +1,19 @@
 import { DataTypes, Sequelize, Model, Optional } from 'sequelize';
 
 interface BookAttributes {
-  book_id: number;
+  id: number;
   title: string;
-  author: string;
-  isbn: string;
-  pages: number;
-  rating: number;
-  genre: string;
+  image: string;
+  subtitle: string; 
 }
 
-interface BookCreationAttributes extends Optional<BookAttributes, 'book_id'> {}
+interface BookCreationAttributes extends Optional<BookAttributes, 'id'> { }
 
 export class Book extends Model<BookAttributes, BookCreationAttributes> implements BookAttributes {
-  public book_id!: number;
+  public id!: number;
   public title!: string;
-  public author!: string;
-  public isbn!: string;
-  public pages!: number;
-  public rating!: number;
-  public genre!: string;
+  public image!: string;
+  public subtitle!: string;
 
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
@@ -28,7 +22,7 @@ export class Book extends Model<BookAttributes, BookCreationAttributes> implemen
 export function BookFactory(sequelize: Sequelize): typeof Book {
   Book.init(
     {
-      book_id: {
+      id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
@@ -36,19 +30,10 @@ export function BookFactory(sequelize: Sequelize): typeof Book {
       title: {
         type: DataTypes.STRING,
       },
-      author: {
+      image: {
         type: DataTypes.STRING,
       },
-      isbn: {
-        type: DataTypes.STRING,
-      },
-      pages: {
-        type: DataTypes.INTEGER,
-      },
-      rating: {
-        type: DataTypes.INTEGER,
-      },
-      genre: {
+      subtitle: {
         type: DataTypes.STRING,
       },
     },

@@ -15,7 +15,7 @@ import { recommend } from '../../controllers/searchController.js';
 const router = express.Router();
 
 //search a book
-router.get('/search', searchBooks);
+router.post('/search', searchBooks);
 
 //search book by id for specific information
 router.get('/search/:id', searchBookById);
@@ -24,7 +24,7 @@ router.get('/search/:id', searchBookById);
 router.get('/similar/:id', getSimilarBooks);
 
 //search book by author
-router.get('/search-author', searchBookByAuthor);
+router.post('/search-author', searchBookByAuthor);
 
 //save book to database
 router.post('/', createBook)

@@ -1,47 +1,23 @@
 import React from 'react';
 
 // Define a type for the recommended item
-interface RecommendedItem {
-  id: number;
+interface RecommendProps {
   title: string;
   author: string;
   description: string;
 }
 
-const Recommended: React.FC = () => {
-  // Sample data for recommendations
-  const recommendedItems: RecommendedItem[] = [
-    {
-      id: 1,
-      title: 'The Great Gatsby',
-      author: 'F. Scott Fitzgerald',
-      description: 'A novel set in the Roaring Twenties, exploring themes of wealth, love, and the American Dream.',
-    },
-    {
-      id: 2,
-      title: '1984',
-      author: 'George Orwell',
-      description: 'A dystopian novel depicting a totalitarian society under constant surveillance.',
-    },
-    {
-      id: 3,
-      title: 'To Kill a Mockingbird',
-      author: 'Harper Lee',
-      description: 'A classic novel tackling racial injustice in the American South.',
-    },
-  ];
+const Recommended: React.FC<RecommendProps> = ({ title, author, description }) => {
 
   return (
     <section style={styles.container}>
       <h2 style={styles.heading}>Recommended for You</h2>
       <ul style={styles.list}>
-        {recommendedItems.map((item) => (
-          <li key={item.id} style={styles.item}>
-            <h3 style={styles.title}>{item.title}</h3>
-            <p style={styles.author}>By: {item.author}</p>
-            <p style={styles.description}>{item.description}</p>
-          </li>
-        ))}
+        <li style={styles.item}>
+          <h3 style={styles.title}>{title}</h3>
+          <p style={styles.author}>By {author}</p>
+          <p style={styles.description}>{description}</p>
+        </li>
       </ul>
     </section>
   );

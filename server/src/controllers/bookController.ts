@@ -44,7 +44,7 @@ export const deleteBook = async (req: Request, res: Response) => {
         if (!book) {
             return res.status(404).json({ error: 'book not found' });
         } else {
-            await Book.destroy();
+            await book.destroy();
             return res.status(204).json();
         }
     } catch (error) {
