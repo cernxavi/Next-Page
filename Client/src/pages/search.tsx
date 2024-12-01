@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { getBooks } from '../api/bookAPI';
 import BookCard from '../components/bookCard';
+import BookCarousel from '../components/BookCarousel';
+import '../styles/search.css';
+
 
 
 function SearchBooks() {
@@ -26,28 +29,35 @@ function SearchBooks() {
     };
 
     return (
-        <div>
-            <h1>Search a Book</h1>
+        <div className="search-wrapper">
+          <h1 className="search-title">Search a Book</h1>
+          <div className="search-bar">
             <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)} />
-            <button onClick={handleSearch}>Search</button>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error</p>}
-            <div>
-                {books.map((book) => (
-                    <BookCard
-                        key={book.id}
-                        id={book.id}
-                        title={book.title}
-                        subtitle={book.subtitle || ''}
-                        image={book.image}
-                    />
-                ))}
-            </div>
+              type="text"
+              className="search-input"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+            <button className="search-button" onClick={handleSearch}>
+              Search
+            </button>
+          </div>
+          {loading && <p className="search-loading">Loading...</p>}
+          {error && <p className="search-error">Error</p>}
+          <BookCarousel books={books} />
+          {/* <div className="row">
+            {books.map((book) => (
+              <BookCard
+                key={book.id}
+                id={book.id}
+                title={book.title}
+                image={book.image}
+              />
+            ))}
+          </div> */}
         </div>
-    );
+      );
+      
 }
 
 export default SearchBooks;
