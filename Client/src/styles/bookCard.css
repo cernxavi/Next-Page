@@ -1,0 +1,49 @@
+/* Ensure the book card layout */
+.book-card {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: space-between; /* Space out image, title, and button */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Book image styling */
+  .book-cover {
+    width: 60%; /* Full width of the parent container */
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 10px; /* Spacing between image and title */
+  }
+  
+  /* Book title styling */
+  .book-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0; /* Margin between title and button */
+  }
+  
+  /* Styling the Save button */
+  .save-button {
+    margin-top: 10px; /* Space between title and button */
+    padding: 8px 15px; /* Button padding */
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    align-self: center; /* Ensure button is centered relative to the card */
+  }
+  
+  /* Button hover effect */
+  .save-button:hover {
+    background-color: #005a40;
+  }
+  
