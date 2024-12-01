@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../styles/Header.css';
+=======
+
+// import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+// import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+>>>>>>> main
 
 function Navigation() {
   return (
@@ -27,6 +36,18 @@ function Navigation() {
               Recommended
             </Nav.Link>
           </Nav>
+<<<<<<< HEAD
+=======
+          {/* <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form> */}
+>>>>>>> main
         </Navbar.Collapse>
       </Container>
     </Navbar>

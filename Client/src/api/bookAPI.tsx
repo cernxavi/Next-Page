@@ -165,27 +165,29 @@ interface query {
   // delete a book from the database
   export const deleteBook = async (id: number) => {
     try {
-      const response = await fetch(
-        `/api/books/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-      )
-      const data = response.json();
-  
-      if (!response.ok) {
-        throw new Error('invalid API response, check network tab!');
-      }
-  
-      return data;
+        const response = await fetch(`/api/books/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.status === 204) {
+            return { message: 'Book deleted successfully' }; // Handle no content response
+        }
+
+        if (!response.ok) {
+            const data = await response.json();
+            throw new Error(data.error || 'Invalid API response, check network tab!');
+        }
+
+        const data = await response.json(); // Fallback for other responses
+        return data;
     } catch (err) {
-      console.log('Error from Volunteer Creation: ', err);
-      return Promise.reject('Could not create Volunteer');
-  
+        console.error('Error deleting book: ', err);
+        return Promise.reject('Could not delete book');
     }
-  };
+};
   
   // recommend books using the OpenAI API
   export const recommendBooks = async (input: text) => {

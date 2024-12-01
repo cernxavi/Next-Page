@@ -18,4 +18,8 @@ const sequelize = process.env.DB_URL
 const Book = BookFactory(sequelize);
 const User = UserFactory(sequelize);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
 export { sequelize, Book, User };
