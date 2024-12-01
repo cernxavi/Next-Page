@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getBooks } from '../api/bookAPI';
-import BookCard from '../components/bookCard';
+// import BookCard from '../components/bookCard';
 import BookCarousel from '../components/BookCarousel';
 import '../styles/search.css';
 
