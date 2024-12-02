@@ -3,8 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import nextPageLogo from "../Images/next-page-logo.svg";
+import AUTH from '../utils/auth';
+import { useState } from "react";
 
 function Navigation() {
+  const [loggedIn, setLoggedIn] =useState(()=> AUTH.loggedIn());
   return (
     <Navbar expand="lg" className="navigation-bar">
       <Container fluid>
@@ -22,10 +25,20 @@ function Navigation() {
           <Nav className="nav-links" navbarScroll>
             <Nav.Link as={Link} to="/myBooks" className="nav-link">
               MyBooks
+            </Nav.Link> 
+        
+           {loggedIn ? ( 
+            <Nav.Link className="nav-link" 
+
+            onClick={() => AUTH.logout()}
+            >
+              Logout
             </Nav.Link>
-            <Nav.Link as={Link} to="/login" className="nav-link">
+          ) : ( 
+          <Nav.Link as={Link} to="/login" className="nav-link">
               Login
             </Nav.Link>
+          )}
             <Nav.Link as={Link} to="/recommend" className="nav-link">
               Recommended
             </Nav.Link>
