@@ -23,17 +23,17 @@ export default function RecommendBook() {
     }
 
     return (
-        <div>
-            <h1>Let us recommend a book for you</h1>
+        <div className='recommended-wrapper'>
+            <h1 className='recommended-title'>Let us recommend a book for you</h1>
             <input type="text"
+            className='recommended-input'
                 value={text}
                 onChange={(e) => setText(e.target.value)}
             />
-            <button onClick={handleRecommend}>Send</button>
-            {loading && <p>Loading...</p>}
-            {error && <p>Error</p>}
+            <button className='recommended-button' onClick={handleRecommend}>Send</button>
+            {loading && <p className='recommended-loadgin'>Loading...</p>}
+            {error && <p className='recommended-error'>Error</p>}
             <div>
-                {/* Conditionally render the Recommended component */}
                 {recommendedBook && (
                     <Recommended
                         title={recommendedBook.title}

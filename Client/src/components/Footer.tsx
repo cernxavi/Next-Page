@@ -16,8 +16,8 @@ const Footer: React.FC = () => {
 // Inline styles
 const styles = {
   footer: {
-    backgroundColor: '#566246', // Ebony from your palette
-    color: '#f1f2eb', // Alabaster from your palette
+    backgroundColor: '#566246', 
+    color: '#f1f2eb', 
     padding: '20px 0',
     textAlign: 'center' as const,
     marginTop: '20px',
@@ -32,7 +32,7 @@ const styles = {
     fontSize: '1rem',
   },
   link: {
-    color: '#a4c2a5', // Cambridge Blue from your palette
+    color: '#a4c2a5', 
     textDecoration: 'none',
     marginLeft: '5px',
   },

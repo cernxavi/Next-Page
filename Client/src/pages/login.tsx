@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { login } from '../api/authAPI'; 
+import AUTH from '../utils/auth';
 
  function Login() {
      const [username, setUsername] = useState('');
@@ -10,16 +12,19 @@ import { useState } from 'react';
      {
          //setLoading(true);
          try {
-             const res = await fetch('/api/login', {
-                 method: 'POST',
-                 headers: { 'Content-Type': 'application/json' },
-                 body: JSON.stringify({ username, password }),
-             });
-             if (res.ok) {
-                 window.location.href = '/myBooks';
-             } else {
-                 setError('Invalid username or password');
-             }
+            //  const res = await fetch('/auth/login', {
+            //      method: 'POST',
+            //      headers: { 'Content-Type': 'application/json' },
+            //      body: JSON.stringify({ username, password }),
+            //  });
+            //  if (res.ok) {
+            //      window.location.href = '/myBooks';
+            //  } else {
+            //      setError('Invalid username or password');
+            //  }
+            const res = await login({ username, password });
+            AUTH.login(res.token);
+            console.log(res);
          } catch (err) {
              console.error(err);
              setError('An error occurred');

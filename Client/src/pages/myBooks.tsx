@@ -33,10 +33,10 @@ const MyBooks = () => {
    }, []);
 
    return (
-       <div>
-           <h1>My Books</h1>
-           {loading && <p>Loading...</p>}
-           {error && <p>Error</p>}
+       <div className='mybooks-wrapper'>
+           <h1 className='mybooks-title'>My Books</h1>
+           {loading && <p className='mybooks-loading'>Loading...</p>}
+           {error && <p className='mybooks-error'>Error</p>}
            <ul>
                {books.map((book) => (
                    <li key={book.id}>

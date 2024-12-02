@@ -1,4 +1,5 @@
 import { seedBook } from './book-seeds.js';
+import { seedUsers } from './user-seeds.js';
 import { sequelize } from '../models/index.js';
 
 
@@ -10,6 +11,9 @@ const seedAll = async (): Promise<void> => {
         await seedBook();
         console.log('\n----- BOOKS SYNCED -----\n');
 
+        await seedUsers();
+        console.log('\n----- USERS SYNCED -----\n');
+
         process.exit(0);
     } catch (error) {
         console.error('Error seeding database:', error);
@@ -17,4 +21,4 @@ const seedAll = async (): Promise<void> => {
     }
 };
 
-seedAll;
+seedAll();

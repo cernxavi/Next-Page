@@ -1,16 +1,35 @@
-
 .mybooks-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Center content vertically */
+  align-items: center;       /* Center content horizontally */
+  height: 100vh;             /* Full viewport height */
+  text-align: center;        /* Center text within elements */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.mybooks-title {
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center; /* Ensures text alignment */
+}
+
+
+/* .mybooks-wrapper {
     margin: 20px;
     text-align: center;
     font-family: Arial, sans-serif;
-  }
+  } */
   
-  .mybooks-title {
+  /* .mybooks-title {
     font-size: 24px;
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
-  }
+  } */
   
   .search-bar {
     display: flex;
@@ -63,3 +82,9 @@
     justify-content: center;
     gap: 20px;
   }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
