@@ -1,0 +1,117 @@
+
+
+.recommended-wrapper {
+    margin: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+
+  .recommended-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Search bar container */
+  .recommended-bar {
+    display: flex;
+    justify-content: center; /* Centers the input and button horizontally */
+    align-items: center;
+    margin-bottom: 20px; /* Spacing below the search bar */
+  }
+  
+  /* Search input styling */
+  .recommended-input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+  }
+  
+  /* Search button styling */
+  .recommended-button {
+    padding: 10px 15px;
+    background-color: #007b5e;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recommended-button:hover {
+    background-color: #005a40;
+  }
+  
+  /* Loading message styling */
+  .recommended-loading {
+    font-size: 16px;
+    color: #007b5e;
+    margin-top: 10px;
+  }
+  
+  /* Error message styling */
+  .recommended-error {
+    font-size: 16px;
+    color: red;
+    margin-top: 10px;
+  }
+  
+.book-row {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next line */
+    justify-content: center; /* Centers the items in the row */
+    gap: 20px; /* Space between the items */
+  }
+
+
+/*
+.container {
+  padding: 20px;
+  background-color: #f1f2eb;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.heading {
+  font-size: 1.5rem;
+  color: #566246;
+  margin-bottom: 10px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #d8dad3;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4a4a48;
+}
+
+.author {
+  font-size: 1rem;
+  color: #566246;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #4a4a48;
+} 
+*/
