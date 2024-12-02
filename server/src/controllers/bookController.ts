@@ -58,7 +58,7 @@ export const deleteBook = async (req: Request, res: Response) => {
 export const searchBooks = async (req: Request, res: Response) => {
     try {
         const query = encodeQuery(req.body.query as string);
-        const apiKey = '9f61e1484e8d4782b1cccc5ba3775cd7';
+        const apiKey = 'd10ba9747eb641cc870e3dd8a06a0cfc';
 
         const response = await axios.get(`https://api.bigbookapi.com/search-books`, {
             params: {
