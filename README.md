@@ -23,21 +23,21 @@ With a user-friendly interface and a robust feature set, you can quickly search 
 
 # Technologies Used
 
-- **Front End**: React
+- **Front End**: React, Bootstrap
 
-- **Back End**: Express.js
+- **Back End**: Node.js, Typescript
 
 - **Database**: PostgreSQL, Sequelize
 
 - **Authentication**: JSON Web Tokens (JWT)
 
-- **APIs**: Big Book API, OpenAI API
+- **APIs**: Big Book API, OpenAI API, Langchain
 
 - **Deployment**: Render
 
 # Challenges
 
-Challenges we face were implementing two different APIs to work from the server side to front end. Staying on top of git merges and workflow.
+Challenges that we faced includes Git workflow and merge conflicts, handling APIs, structure of the project. Staying on top on git merges and workflow proved difficult when we all work on different parts and trying to keep the team updated. Other challenges were getting the database to work and styling for the navigation and carousel. Authentication was one of the most challenging parts. When we finally had the server side working the front-end was more an extention on added stress. Finally, the last step, the deployment was not easier than the rest.
 
 # Credits
 Riley Mecham https://github.com/Riley6639, Martha Watson https://github.com/Elementary-my-dear-Watson, Xavier Cerna https://github.com/cernxavi
