@@ -1,5 +1,5 @@
 # Next Page: Your Gateway to Book Discovery
-Next Page is an intuitive app designed for book enthusiasts. Search for books, receive personalized recommendations, explore trending titles, and dive inot detailed book information all in one place.
+Next Page is an intuitive app designed for book enthusiasts. Search for books, receive personalized recommendations, explore trending titles, and dive into detailed book information all in one place.
 
 ## **Description**
 

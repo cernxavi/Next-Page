@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App';
 import ErrorPage from './pages/ErrorPage';
 // import MainPage from './pages/MainPage';
-// import Login from './pages/login';
+import Login from './pages/login';
 import MyBooks from './pages/myBooks';
 import Recommend from './pages/recommend';
 import Search from './pages/search';
@@ -21,10 +21,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Search />
       }, 
-      // {
-      //   path: '/login',
-      //   element: <Login />
-      // },
+      {
+        path: '/login',
+        element: <Login />
+      },
       {
         path: '/myBooks',
         element: <MyBooks />
