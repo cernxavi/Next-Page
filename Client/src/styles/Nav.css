@@ -1,0 +1,23 @@
+.nav-logo {
+    display: inline-block;
+    height: 50px; 
+    width: auto; 
+    max-width: 80px; 
+    object-fit: contain; 
+    margin-right: 10px; 
+  }
+
+  /* .nav-links.spread-out {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%; 
+  }
+   */
+    .nav-links {
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 20px; 
+    }
+  

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="martha" xmlns="http://www.w3.org/2000/svg" width="484.775" height="432.48" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 484.775 432.48">
+  <defs>
+    <clipPath id="clippath">
+      <path d="M187.888,27.436l69.646,143.513,28.492,26.381,150.9,60.149s29.547-104.469,15.829-153.011C439.036,55.928,344.064,0,303.965,0s-116.077,27.436-116.077,27.436Z" fill="none"/>
+    </clipPath>
+  </defs>
+  <polygon points="414.888 270.48 252.888 432.48 113.888 365.48 276.888 202.48 414.888 270.48" fill="#9f3310"/>
+  <polygon points="256.388 182.98 167.388 31.98 13.388 187.98 93.388 345.98 256.388 182.98" fill="#e06426"/>
+  <rect x="175.36" y="158.375" width="19.071" height="231.224" rx="3.467" ry="3.467" transform="translate(247.893 -50.492) rotate(45)" fill="#e36725"/>
+  <rect x="247.282" y="198.005" width="8.119" height="19.071" transform="translate(-73.137 238.513) rotate(-45)" fill="#125c9e"/>
+  <rect x="237.282" y="208.005" width="8.119" height="19.071" transform="translate(-83.137 234.371) rotate(-45)" fill="#125c9e"/>
+  <g clip-path="url(#clippath)">
+    <circle cx="267.031" cy="190.999" r="98.138" fill="none" stroke="#a0bdd0" stroke-dasharray="2.993 2.993" stroke-linejoin="round" stroke-width="139"/>
+  </g>
+</svg>

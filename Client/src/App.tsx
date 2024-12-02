@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{minHeight:"62.75vh"}}>
         <Outlet />
       </main>
       <Footer />

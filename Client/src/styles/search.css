@@ -1,10 +1,10 @@
-/* Wrapper for the entire search component */
+
 .search-wrapper {
-    margin: 20px;
+    margin: 0 20px 20px 20px;
     text-align: center;
     font-family: Arial, sans-serif;
   }
-  
+  /* Wrapper for the entire search component */
   /* Title styling */
   .search-title {
     font-size: 24px;
