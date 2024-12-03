@@ -6,12 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build && npm run server:start",
-    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run Client:dev\"",
+    "start:dev": "concurrently \"npm run server:dev\" \"wait-on tcp:3001 && npm run client:dev\"",
     "server:build": "cd server && npm install && npm run build",
     "server:start": "cd server && npm install && npm start",
     "server:dev": "cd server && npm run dev",
-    "client:build": "cd Client && npm install && npm run build",
-    "client:dev": "cd Client && npm install && npm run dev",
+    "client:dev": "cd client && npm install && npm run dev",
+    "client:build": "cd client && npm install && npm run dev",
     "build": "npm run client:build && npm run server:build",
     "render-build": "npm install && npm run build",
     "seed": "cd server && npm run seed"
