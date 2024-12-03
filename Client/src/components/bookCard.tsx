@@ -25,6 +25,14 @@ const BookCard: React.FC<BookCardProps> = ({ image, id, title }) => {
     }
   }
 
+  <div className="book-cards-container">
+  <div className="book-card">
+    <img src="book-cover.jpg" alt="Book Cover" className="book-cover" />
+    <h3 className="book-title">Book Title</h3>
+    <button className="save-button">Save</button>
+  </div>
+</div>
+
   return (
     <div className="col-lg-4">
       <div className="book-card">

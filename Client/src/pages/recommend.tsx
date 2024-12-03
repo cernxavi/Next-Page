@@ -24,7 +24,7 @@ export default function RecommendBook() {
 
     return (
         <div className='recommended-wrapper'>
-            <h1 className='recommended-title'>Let us recommend a book for you</h1>
+            <h3 className='recommended-title'>Let us recommend a book for you</h3>
             <input type="text"
             className='recommended-input'
                 value={text}

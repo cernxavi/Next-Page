@@ -1,19 +1,28 @@
 /* Ensure the book card layout */
 .book-card {
-    display: flex;
-    flex-direction: column; /* Align items vertically */
-    align-items: center; /* Center content horizontally */
-    justify-content: space-between; /* Space out image, title, and button */
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: space-between; /* Space out image, title, and button */
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 20px; /* Add space below each card */
+}
+
+.book-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid with flexible columns */
+  gap: 20px; /* Add space between cards */
+}
+
+
   
   /* Book image styling */
   .book-cover {
-    width: 60%; /* Full width of the parent container */
+    width: 40%; /* Full width of the parent container */
     height: auto;
     border-radius: 6px;
     margin-bottom: 10px; /* Spacing between image and title */
@@ -31,7 +40,7 @@
   .save-button {
     margin-top: 10px; /* Space between title and button */
     padding: 8px 15px; /* Button padding */
-    background-color: #007b5e;
+    background-color: #d36115;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -44,6 +53,6 @@
   
   /* Button hover effect */
   .save-button:hover {
-    background-color: #005a40;
+    background-color: #e9bc28;
   }
   

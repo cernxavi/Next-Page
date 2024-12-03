@@ -11,47 +11,55 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 15px;
+    margin-top: 55px;
   }
   
-  /* Search bar container */
-  .search-bar {
-    display: flex;
-    justify-content: center; /* Centers the input and button horizontally */
-    align-items: center;
-    margin-bottom: 20px; /* Spacing below the search bar */
-  }
-  
-  /* Search input styling */
-  .search-input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-  }
-  
-  /* Search button styling */
-  .search-button {
-    padding: 10px 15px;
-    background-color: #007b5e;
-    color: #fff;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-  }
-  
-  .search-button:hover {
-    background-color: #005a40;
-  }
-  
+/* Wrapper for the search bar */
+.search-bar {
+  display: flex;
+  flex-direction: column; /* Stack the input and button vertically */
+  justify-content: center; /* Centers the input and button horizontally */
+  align-items: center; /* Aligns the input and button in the center */
+  margin-bottom: 20px; /* Spacing below the search bar */
+}
+
+
+/* Search input styling */
+.search-input {
+  width: 300px; /* Width of the input */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners for the input */
+  font-size: 16px;
+  margin-bottom: 10px; /* Adds space below the input */
+}
+
+/* Search button styling */
+.search-button {
+  padding: 12px 12px; /* Reduced padding for a smaller button */
+  background-color: #d36115;
+  color: #fff;
+  border: none;
+  border-radius: 4px; /* Rounded corners for the button */
+  cursor: pointer;
+  font-size: 14px; /* Smaller font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: 5px; /* Space between the button and the input */
+  width: 10%; /* Button width */
+}
+
+/* Button hover effect */
+.search-button:hover {
+  background-color: #e9bc28;
+}
+
+
   /* Loading message styling */
   .search-loading {
     font-size: 16px;
-    color: #007b5e;
+    color: #3fa0e0;
     margin-top: 10px;
   }
   
