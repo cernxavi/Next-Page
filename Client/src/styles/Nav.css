@@ -1,3 +1,10 @@
+Client/
+  src/
+    components/
+      Nav.tsx
+    images/
+      next-page-logo.svg
+
 .nav-logo {
     display: inline-block;
     height: 50px; 
