@@ -1,9 +1,9 @@
 /* Login.css */
 src/
-  components/
-    Footer.tsx
-    Footer.css
-
+  styles/
+    Login.css
+  pages/
+    login.tsx
 
 /* Wrapper for the login box */
 .login-wrapper {

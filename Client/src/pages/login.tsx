@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { login } from '../api/authAPI';
 import AUTH from '../utils/auth';
-import '../styles/login.css';
+import '../styles/Login.css';
 import { Link } from 'react-router-dom';
 
 function Login() {
