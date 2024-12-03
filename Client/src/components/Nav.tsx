@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import nextPageLogo from "../images/next-page-logo.svg";
+// import nextPageLogo from "../images/next-page-logo.svg";
 import AUTH from '../utils/auth';
 import { useState } from "react";
 
@@ -12,12 +12,19 @@ function Navigation() {
     <Navbar expand="lg" className="navigation-bar">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="nav-brand">
-          <img
+        <img
+          src="/assets/next-page-logo.svg" // This points to the public folder
+          alt="Next Page Logo"
+          className="nav-logo"
+          style={{ height: '50px', width: 'auto', marginRight: '10px' }}
+        />
+
+          {/* <img
             src={nextPageLogo}
             alt="Next Page Logo"
             className="nav-logo"
             style={{ height: '50px', width: 'auto', marginRight: '10px' }}
-          />
+          /> */}
           Next Page
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
