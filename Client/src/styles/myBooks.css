@@ -1,90 +1,88 @@
 .mybooks-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Center content vertically */
-  align-items: center;       /* Center content horizontally */
-  height: 100vh;             /* Full viewport height */
-  text-align: center;        /* Center text within elements */
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  text-align: center;        
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
+/* Title styling */
 .mybooks-title {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
-  text-align: center; /* Ensures text alignment */
+  text-align: center; 
 }
 
+/* Search bar wrapper */
+.mybooks-bar {
+  display: flex;
+  flex-direction: column; /* Stack the input and button vertically */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-/* .mybooks-wrapper {
-    margin: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  } */
-  
-  /* .mybooks-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 15px;
-  } */
-  
-  .search-bar {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  
-  .search-input {
-    width: 300px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-  }
-  
-  .search-button {
-    padding: 10px 15px;
-    background-color: #007b5e;
-    color: #fff;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-  }
-  
-  .search-button:hover {
-    background-color: #005a40;
-  }
-  
-  .mybooks-loading {
-    font-size: 16px;
-    color: #007b5e;
-    margin-top: 10px;
-  }
-  
-  .mybooks-error {
-    font-size: 16px;
-    color: red;
-    margin-top: 10px;
-  }
-  
-  .book-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
+/* Search input styling */
+.mybooks-input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px;
+  margin-bottom: 10px; /* Adds space between input and button */
+}
 
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* Search button styling */
+.mybooks-button {
+  padding: 12px 12px; /* Button padding */
+  background-color: #007b5e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: 5px; /* Adds space between the input and button */
+  width: 100%; /* Button width to fit under the input */
+}
+
+/* Button hover effect */
+.mybooks-button:hover {
+  background-color: #005a40;
+}
+
+/* Loading message styling */
+.mybooks-loading {
+  font-size: 16px;
+  color: #007b5e;
+  margin-top: 10px;
+}
+
+/* Error message styling */
+.mybooks-error {
+  font-size: 16px;
+  color: red;
+  margin-top: 10px;
+}
+
+/* Book row styling */
+.book-row {
+  display: flex;
+  flex-wrap: wrap; /* Ensures items wrap to the next line */
+  justify-content: center; /* Centers the items in the row */
+  gap: 20px; /* Space between items */
+}
+
+/* Body and HTML reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }

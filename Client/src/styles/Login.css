@@ -1,0 +1,77 @@
+/* Login.css */
+src/
+  components/
+    Footer.tsx
+    Footer.css
+
+
+/* Wrapper for the login box */
+.login-wrapper {
+    margin: 0 20px 20px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Login box styling */
+  .login-box {
+    width: 300px; /* Box width */
+    margin: 100px auto; /* Center the box horizontally and vertically */
+    padding: 20px; /* Inner padding */
+    background-color: #cbdbe2; /* Alabaster */
+    border: 1px solid #d8dad3; /* Timberwolf */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center content */
+    font-family: Arial, sans-serif; /* Optional font */
+  }
+  
+  .login-box h3 {
+    margin-bottom: 20px;
+    color: #566246; /* Ebony */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px; /* Space between input fields */
+    text-align: left; /* Align labels to the left */
+  }
+  
+  /* Label styling */
+  .form-group label {
+    display: block; /* Place label above input */
+    margin-bottom: 5px; /* Space between label and input */
+    color: #383837; /* Davy's Gray */
+  }
+  
+  /* Input styling */
+  .form-group input {
+    width: 100%; /* Full-width inputs */
+    padding: 8px; /* Inner padding */
+    border: 1px solid #d8dad3; /* Input border */
+    border-radius: 4px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin: 10px 0;
+  }
+  
+  /* Submit button styling */
+  button {
+    width: 100%; /* Full-width button */
+    padding: 10px; /* Button padding */
+    background-color: #d36115; /* Cambridge Blue */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+  }
+  
+  /* Button hover effect */
+  button:hover {
+    background-color: #e9bc28; /* Darker shade on hover */
+  }
+  
