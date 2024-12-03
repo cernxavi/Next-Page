@@ -12,7 +12,7 @@
     "server:dev": "cd server && npm run dev",
     "client:build": "cd Client && npm install && npm run build",
     "client:dev": "cd Client && npm install && npm run dev",
-    "build": "npm run Client:build && npm run server:build",
+    "build": "npm run client:build && npm run server:build",
     "render-build": "npm install && npm run build",
     "seed": "cd server && npm run seed"
   },
