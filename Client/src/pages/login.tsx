@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { login } from '../api/authAPI';
 import AUTH from '../utils/auth';
 import '../styles/login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -56,6 +57,10 @@ function Login() {
           {error && <p className="error-message">{error}</p>}
           <button type="submit">Login</button>
         </form>
+        <div>
+                <p>Don't have an account?</p>
+                <Link to="/signup">Signup</Link>
+            </div>
       </div>
     </div>
   );

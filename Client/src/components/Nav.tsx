@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import nextPageLogo from "../Images/next-page-logo.svg";
+import nextPageLogo from "../images/next-page-logo.svg";
 import AUTH from '../utils/auth';
 import { useState } from "react";
 
 function Navigation() {
-  const [loggedIn, setLoggedIn] =useState(()=> AUTH.loggedIn());
+  const [loggedIn] =useState(()=> AUTH.loggedIn());
   return (
     <Navbar expand="lg" className="navigation-bar">
       <Container fluid>
