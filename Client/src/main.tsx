@@ -10,6 +10,8 @@ import Login from './pages/login';
 import MyBooks from './pages/myBooks';
 import Recommend from './pages/recommend';
 import Search from './pages/search';
+import Signup from './pages/signup';
+import ProtectRoute from './components/protectRoute';
 
 const router = createBrowserRouter([
   {
@@ -27,15 +29,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/myBooks',
-        element: <MyBooks />
+        element: (
+          <ProtectRoute>
+            <MyBooks />
+          </ProtectRoute>
+          ),
       },
       {
         path: '/recommend',
         element: <Recommend />
       },
       {
-        path: '/search',
-        element: <Search />
+        path: '/signup',
+        element: <Signup />
       },
     ]
   }

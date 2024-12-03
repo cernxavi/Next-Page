@@ -1,17 +1,17 @@
 import { useState } from 'react';
-import { login } from '../api/authAPI'; 
-import AUTH from '../utils/auth';
+import { login } from '../api/authAPI';
+import AuthService from '../utils/auth';
+import { Link } from 'react-router-dom';
 
- function Login() {
-     const [username, setUsername] = useState('');
-     const [password, setPassword] = useState('');
-     const [error, setError] = useState('');
+function Login() {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     // const [loading, setLoading] = useState(false);
 
-     const handleLogin = async () =>
-     {
-         //setLoading(true);
-         try {
+    const handleLogin = async () => {
+        //setLoading(true);
+        try {
             //  const res = await fetch('/auth/login', {
             //      method: 'POST',
             //      headers: { 'Content-Type': 'application/json' },
@@ -23,37 +23,41 @@ import AUTH from '../utils/auth';
             //      setError('Invalid username or password');
             //  }
             const res = await login({ username, password });
-            AUTH.login(res.token);
+            AuthService.login(res.token);
             console.log(res);
-         } catch (err) {
-             console.error(err);
-             setError('An error occurred');
-         }
+        } catch (err) {
+            console.error(err);
+            setError('An error occurred');
+        }
         // setLoading(false);
-     };
-     return (
-         <div>
-             <h1>Login</h1>
-             <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
-                 <div>
-                     <label>Username</label>
-                     <input
-                         type="text"
-                         value={username}
-                         onChange={(e) => setUsername(e.target.value)} required
-                     />
-                 </div>
-                 <div>
-                     <label>Password</label>
-                     <input
-                         type="password"
-                         value={password}
-                         onChange={(e) => setPassword(e.target.value)} required
-                     />
-                 </div>                 {error && <p style={{ color: 'red' }}>{error}</p>}
-                 <button type='submit'>Login</button>
-             </form>
-         </div>
-     );
- }
- export default Login;
+    };
+    return (
+        <div>
+            <h1>Login</h1>
+            <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }}>
+                <div>
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)} required
+                    />
+                </div>
+                <div>
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)} required
+                    />
+                </div>                 {error && <p style={{ color: 'red' }}>{error}</p>}
+                <button type='submit'>Login</button>
+            </form>
+            <div>
+                <p>Don't have an account?</p>
+                <Link to="/signup">Signup</Link>
+            </div>
+        </div>
+    );
+}
+export default Login;
