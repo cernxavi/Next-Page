@@ -35,6 +35,11 @@ With a user-friendly interface and a robust feature set, you can quickly search 
 
 - **Deployment**: Render
 
+# Deployment
+**https://next-page-3tqu.onrender.com**
+
+![Next Page](<Screenshot 2024-12-02 at 5.35.38 PM.png>)
+
 # Challenges
 
 Challenges that we faced includes Git workflow and merge conflicts, handling APIs, structure of the project. Staying on top on git merges and workflow proved difficult when we all work on different parts and trying to keep the team updated. Other challenges were getting the database to work and styling for the navigation and carousel. Authentication was one of the most challenging parts. When we finally had the server side working the front-end was more an extention on added stress. Finally, the last step, the deployment was not easier than the rest.

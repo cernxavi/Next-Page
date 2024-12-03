@@ -7,7 +7,7 @@ import AUTH from '../utils/auth';
 import { useState } from "react";
 
 function Navigation() {
-  const [loggedIn, setLoggedIn] =useState(()=> AUTH.loggedIn());
+  const [loggedIn] =useState(()=> AUTH.loggedIn());
   return (
     <Navbar expand="lg" className="navigation-bar">
       <Container fluid>
