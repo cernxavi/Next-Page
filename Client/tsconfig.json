@@ -8,12 +8,11 @@
     "typeRoots": ["node_modules/@types"], // Added
 
     /* Bundler mode */
-    "moduleResolution": "node", // Added
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "esModuleInterop": true,
     "jsx": "react-jsx",
 
     /* Linting */
@@ -22,6 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-"include": ["src", "../Clientone/Client/src/Components", "src/declarations.d.ts"], // Added
+  "include": ["src", "../Clientone/Client/src/Components"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
