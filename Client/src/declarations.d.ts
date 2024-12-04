@@ -1,4 +1,4 @@
-server/src/declarations.d.ts
+Client/src/declarations.d.ts
 
 declare module '*.jpg' {
     const value: string;
