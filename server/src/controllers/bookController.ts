@@ -55,7 +55,8 @@ export const deleteBook: RequestHandler = async (req: Request, res: Response) =>
 
         }
     } catch (error) {
-        return res.status(500).json({ error: 'error deleting book' });
+        res.status(500).json({ error: 'error deleting book' });
+        return;
     }
 };
 
