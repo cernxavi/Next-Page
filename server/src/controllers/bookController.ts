@@ -19,8 +19,10 @@ const encodeQuery = (query: string): string => {
 export const getAllBooks = async (_req: Request, res: Response) => {
     try {
         const books = await Book.findAll();
+        console.log('books found');
         res.status(200).json(books);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'error getting books' });
     }
 };
@@ -45,13 +47,15 @@ export const deleteBook: RequestHandler = async (req: Request, res: Response) =>
         if (!book) {
             res.status(404).json({ error: 'book not found' });
             return;
+
         } else {
             await book.destroy();
             res.status(204).json();
             return;
+
         }
     } catch (error) {
-         res.status(500).json({ error: 'error deleting book' });
+        return res.status(500).json({ error: 'error deleting book' });
     }
 };
 
