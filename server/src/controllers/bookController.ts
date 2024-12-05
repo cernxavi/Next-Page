@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { RequestHandler } from 'express-serve-static-core';
 import { Book } from '../models/book.js';
 import dotenv from 'dotenv';
 import axios from 'axios';
@@ -38,7 +39,7 @@ export const createBook = async (req: Request, res: Response) => {
 
 
 // delete book by id
-export const deleteBook = async (req: Request, res: Response) => {
+export const deleteBook: RequestHandler = async (req: Request, res: Response) => {
     try {
         const book = await Book.findByPk(req.params.id);
         if (!book) {
