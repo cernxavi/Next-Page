@@ -43,13 +43,15 @@ export const deleteBook: RequestHandler = async (req: Request, res: Response) =>
     try {
         const book = await Book.findByPk(req.params.id);
         if (!book) {
-            return res.status(404).json({ error: 'book not found' });
+            res.status(404).json({ error: 'book not found' });
+            return;
         } else {
             await book.destroy();
-            return res.status(204).json();
+            res.status(204).json();
+            return;
         }
     } catch (error) {
-        return res.status(500).json({ error: 'error deleting book' });
+         res.status(500).json({ error: 'error deleting book' });
     }
 };
 

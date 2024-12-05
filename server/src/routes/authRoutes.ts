@@ -11,17 +11,20 @@ export const login: RequestHandler = async (req: Request, res: Response) => {
         where: { username }
     });
     if (!user) {
-        return res.status(404).json({ message: 'User not found' });
+        res.status(404).json({ message: 'User not found' });
+        return;
     }
 
     const passwordIsValid = await bcrypt.compare(password, user.password);
     if (!passwordIsValid) {
-        return res.status(401).json({ message: 'Invalid password' });
+        res.status(401).json({ message: 'Invalid password' });
+        return;
     }
 
     const secretKey = process.env.JWT_SECRET_KEY || '';
     const token = jwt.sign({ username }, secretKey, { expiresIn: '1h' });
-    return res.json({ token });
+    res.json({ token });
+    return;
 };
 
 const router = Router();
